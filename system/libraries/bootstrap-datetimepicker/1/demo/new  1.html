@@ -1,0 +1,97 @@
+
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery UI datetimepicker with Twitter Bootstrap Theme</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../bootstrap-datetimepicker.min.css" />
+        <style>body{margin:2em}</style>
+    </head>
+    <body>
+        <h1>jQuery UI datetimepicker with Twitter Bootstrap Theme</h1>
+        <form>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker0">datetimepicker</label>
+                <div class="controls">
+                    <input id="datetimepicker0" type="text">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker1">datetimepicker with bootstrap icon button</label>
+                <div class="controls">
+                    <div class="input-append">
+                        <input id="datetimepicker1" class="input-small" type="text">
+                        <button id="datetimepicker1btn" class="btn" type="button"><i class="icon-calendar"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker2">datetimepicker with other months selectable (jQuery option)</label>
+                <div class="controls">
+                    <input type="text" id="datetimepicker2" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker3">datetimepicker with 3 months and button panel (jQuery option)</label>
+                <div class="controls">
+                    <input type="text" id="datetimepicker3" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker4">datetimepicker with change month/year (jQuery option)</label>
+                <div class="controls">
+                    <input type="text" id="datetimepicker4" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker5">datetimepicker with limited selection to within the next 14 days (jQuery option)</label>
+                <div class="controls">
+                    <input type="text" id="datetimepicker5" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="datetimepicker6">datetimepicker with RTL and date format (jQuery option)</label>
+                <div class="controls">
+                    <input id="datetimepicker6" type="text">
+                </div>
+            </div>
+        </form>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="../bootstrap-datetimepicker.min.js"></script>
+        <script src="../bootstrap-datetimepicker.fa.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#datetimepicker0").datetimepicker();
+            
+                $("#datetimepicker1").datetimepicker();
+                $("#datetimepicker1btn").click(function(event) {
+                    event.preventDefault();
+                    $("#datetimepicker1").focus();
+                })
+            
+                $("#datetimepicker2").datetimepicker({
+                    showOtherMonths: true,
+                    selectOtherMonths: true
+                });
+            
+                $("#datetimepicker3").datetimepicker({
+                    numberOfMonths: 3,
+                    showButtonPanel: true
+                });
+            
+                $("#datetimepicker4").datetimepicker({
+                    changeMonth: true,
+                    changeYear: true
+                });
+            
+                $("#datetimepicker5").datetimepicker({
+                    minDate: 0,
+                    maxDate: "+14D"
+                });
+            
+                $("#datetimepicker6").datetimepicker({
+                    isRTL: true,
+                    dateFormat: "d/m/yy"
+                });
+            });
+        </script>
+    </body>
